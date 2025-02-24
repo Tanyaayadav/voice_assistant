@@ -65,6 +65,15 @@ function takeCommand(message) {
         } else {
             speak("I couldn't find the time for the meeting. Can you please specify the time?");
         }
+    } else if (message.includes("arrange a meeting") || message.includes("schedule a meeting")) {
+        let time = extractTimeFromMessage(message);
+        if (time) {
+            speak(`Meeting added at ${time}.`);
+            console.log(`Meeting added at ${time}.`);
+        } else {
+            speak("Meeting added.");
+            console.log("Meeting added to the schedule.");
+        }
     } else if (message.includes("hello") || message.includes("hey")) {
         speak("Hello sir, what can I help you with?");
     } else if (message.includes("who are you")) {
@@ -121,3 +130,65 @@ function openCalendar() {
     window.open("https://calendar.google.com/", "_blank");
     speak("Opening your calendar.");
 }
+
+// Add event listener to the calendar button
+document.getElementById("calendar-btn").addEventListener("click", function () {
+    openCalendar();
+});
+
+// =======================
+// Floating Notes Feature
+// =======================
+
+// Open Notes Panel
+document.getElementById("notes-btn").addEventListener("click", function () {
+    let notesPanel = document.getElementById("floating-notes");
+    notesPanel.style.display = "flex";
+});
+
+// Close Notes Panel
+document.getElementById("close-notes").addEventListener("click", function () {
+    document.getElementById("floating-notes").style.display = "none";
+});
+
+// Minimize Notes Panel
+document.getElementById("minimize-notes").addEventListener("click", function () {
+    let textarea = document.getElementById("notes-area");
+    if (textarea.style.display === "none") {
+        textarea.style.display = "block";
+    } else {
+        textarea.style.display = "none";
+    }
+});
+
+// Dragging Notes Panel
+let notesHeader = document.getElementById("notes-header");
+let floatingNotes = document.getElementById("floating-notes");
+
+notesHeader.addEventListener("mousedown", function (e) {
+    let shiftX = e.clientX - floatingNotes.getBoundingClientRect().left;
+    let shiftY = e.clientY - floatingNotes.getBoundingClientRect().top;
+
+    function moveAt(pageX, pageY) {
+        floatingNotes.style.left = pageX - shiftX + "px";
+        floatingNotes.style.top = pageY - shiftY + "px";
+    }
+
+    function onMouseMove(event) {
+        moveAt(event.pageX, event.pageY);
+    }
+
+    document.addEventListener("mousemove", onMouseMove);
+
+    notesHeader.addEventListener("mouseup", function () {
+        document.removeEventListener("mousemove", onMouseMove);
+    });
+});
+
+// Load Notes from Local Storage
+let notesArea = document.getElementById("notes-area");
+notesArea.value = localStorage.getItem("savedNotes") || "";
+
+notesArea.addEventListener("input", function () {
+    localStorage.setItem("savedNotes", notesArea.value);
+});
