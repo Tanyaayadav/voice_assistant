@@ -1,21 +1,21 @@
 {
-  "short_name": "Tany",
-  "name": "Tany - Virtual Assistant",
-  "icons": [
-    {
-      "src": "logo-192x192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo-512x512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
-  ],
-  "start_url": "/",
-  "background_color": "#1e1e1e",
-  "display": "standalone",
-  "scope": "/",
-  "theme_color": "#ff6f61"
-}
+    "short_name": "MyApp",
+    "name": "My Awesome App",
+    "description": "A description of my awesome app.",
+    "icons": [
+      {
+        "src": "icon-192x192.png",
+        "type": "image1/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "icon-512x512.png",
+        "type": "image2/png",
+        "sizes": "512x512"
+      }
+    ],
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#000000"
+  }
