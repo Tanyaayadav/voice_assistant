@@ -1,16 +1,16 @@
 {
     "short_name": "MyApp",
-    "name": "My Awesome App",
+    "name": "TaKa",
     "description": "A description of my awesome app.",
     "icons": [
       {
-        "src": "icon-192x192.png",
-        "type": "image1/png",
+        "src": "image1.png",
+        "type": "image/png",
         "sizes": "192x192"
       },
       {
-        "src": "icon-512x512.png",
-        "type": "image2/png",
+        "src": "image2.png",
+        "type": "image/png",
         "sizes": "512x512"
       }
     ],
