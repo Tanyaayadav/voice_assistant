@@ -1,4 +1,4 @@
-Shinfra – Smart Voice Assistant for Professionals
+Tany – Smart Voice Assistant for Professionals
 Shinfra is a voice-powered assistant designed to help professionals manage tasks, meetings, and notes efficiently. It listens to conversations, extracts key action items, and converts them into structured digital actions like tasks, calendar events, meeting summaries, and reminders.
 
 **Features
