@@ -103,6 +103,25 @@ h1 {
     opacity: 0.8;
 }
 
+/* Summary Box */
+#summary-box {
+    width: 80%;
+    max-width: 300px;
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px dashed white;
+    border-radius: 10px;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#summary-text {
+    margin: 0;
+}
+
 /* Floating Notes */
 #floating-notes {
     position: fixed;
